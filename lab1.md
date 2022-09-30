@@ -22,7 +22,7 @@
 * $ cp: copy file
 
 ## 4. Moving Files with scp
-![Image](lab1img/img4.PNG)
+![Image](lab1img/img4.png)
 * use command $ scp "file name" cs15lfa22(xx)@ieng6.ucsd.edu:~/ to upload the file
 * enters the password
 * should be visible in the remote server
