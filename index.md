@@ -6,3 +6,5 @@ This is a change to the file
 [Lab Report 1](https://swiftgapple.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
 
 [Markdown Practice](https://swiftgapple.github.io/cse15l-lab-reports/markdown_practice.html)
+
+[Lab1 Report](https://swiftgapple.github.io/cse15l-lab-reports/lab1.html)
