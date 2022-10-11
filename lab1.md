@@ -6,7 +6,7 @@
 * Download VSCode at the website
 * [Download VSCode Here]( https://code.visualstudio.com/)
 * Install the correct version with your system (win/macos/linux)
-* Open up a new terminal in VSCode (Ctrt + Shift + ~)
+* Open up a new terminal in VSCode (Ctrt + Shift + `)
 
 ## 2. Remotely Connecting
 ![Image](lab1img/img2.png)
