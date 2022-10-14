@@ -4,26 +4,19 @@ The bug (the code fix needed)
 Then, explain the connection between the symptom and the bug. Why does the bug cause that particular symptom for that particular input?
 
 # List Method (ArrayExamples)
-* Failure inducing input:
-'''
-  @Test
-  public void testReversed02(){
-    int[] input2 = {1, 2, 3};
-    int[] input2Reversed = {3, 2, 1};
+* **Failure inducing input**:
+![Image](lab3img/5.png)
 
-    assertArrayEquals(input2Reversed, ArrayExamples.reversed(input2));
-    assertArrayEquals(new int[]{1, 2, 3}, input2);
-  }
-  '''
-
-
+<br />
+* **Symptom**: the resulting array are all zeros '[0,0,0]'
 ![Image](lab3img/1.png)
-* Symptom: the resulting array are all zeros '[0,0,0]'
 
-* Explaination: the reversed method has two bugs. The first one is that it creates a new empty array and assigns in indices from the blank arry to the input array. This is why the output array is all zeros. The new array is set by default to be all zeros. The part `array[i] = newArray[arr.length - i - 1]' is bug. Secondly, the method modifys and outputs the original array instead of outputs the new array. It should return 'newArray' instead of returning 'arr'.
 
+* **Explaination**: the reversed method has two bugs. The first one is that it creates a new empty array and assigns in indices from the blank arry to the input array. This is why the output array is all zeros. The new array is set by default to be all zeros. The part `array[i] = newArray[arr.length - i - 1]' is bug. Secondly, the method modifys and outputs the original array instead of outputs the new array. It should return 'newArray' instead of returning 'arr'.
+
+* **Fixed code**:
 ![Image](lab3img/2.png)
-* ^ Fixed code
+
 
 # ListExamples (filter)
 * Failure inducing input: an list of String with length longer than 1
