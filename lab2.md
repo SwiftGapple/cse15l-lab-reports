@@ -1,5 +1,44 @@
 # Part 1: Simple Search Engine
 
+```
+class Handler implements URLHandler {
+    // The one bit of state on the server: a number that will be manipulated by
+    // various requests.
+    ArrayList<String> searchDir = new ArrayList<String>();
+
+    public String handleRequest(URI url) {
+        //For the defualt web page
+        if (url.getPath().equals("/")) {
+            return "Welcome to the fruit search engine. Use the url to input you search item.";
+
+        //Adding a keyword to the list
+        } else {
+            //Add a serach index
+            if (url.getPath().contains("/add")) {
+                System.out.println("debug");
+
+                String[] parameters = url.getQuery().split("=");
+
+                searchDir.add(parameters[1]);
+                return "Key word added";
+            }
+            //Searching an item in the index
+            if (url.getPath().contains("/search")) {
+                String[] keyword = url.getQuery().split("=");
+
+                //Looping the directory to find the keyword
+                for(int i = 0; i < searchDir.size(); ++i){
+                    if(searchDir.get(i).contains(keyword[1])){
+                        return "Keyword found " + searchDir.get(i);
+                    }
+                }
+            }
+            return "404 Not Found!";
+        }
+    }
+}
+```
+
 ## Welcome Page
 ![Image](lab2img/7.png)
 
