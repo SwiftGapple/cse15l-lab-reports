@@ -7,7 +7,8 @@ Then, explain the connection between the symptom and the bug. Why does the bug c
 * **Failure inducing input**:
 ![Image](lab3img/5.png)
 
-<br />
+\\
+
 * **Symptom**: the resulting array are all zeros '[0,0,0]'
 ![Image](lab3img/1.png)
 
