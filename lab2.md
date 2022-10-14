@@ -37,6 +37,19 @@ class Handler implements URLHandler {
         }
     }
 }
+
+class SearchEngine {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler());
+    }
+}
 ```
 
 ## Welcome Page
@@ -54,7 +67,7 @@ class Handler implements URLHandler {
 * The code begin reading the query (start with "?")
 * Split the query in two parts by "=":
 * `String[] parameters = url.getQuery().split("=");`
-* Write the keyword "apple" to an arraylist
+* Write the keyword "apple" to an arraylist `searchDir`
 
 ## Search method 
 ![Image](lab2img/9.png)
@@ -63,7 +76,7 @@ class Handler implements URLHandler {
 * The code begin reading the query (start with "?")
 * Split the query in two parts by "=":
 * `String[] keyword = url.getQuery().split("=");`
-* Search the arraylist for matching; if yes, display a message on the website; if not, display another message
+* Search `searchDir` for the keyword; if exists, display a message on the website; if not, display error message
 
 ---
 # Part 2: Debugging
@@ -74,7 +87,6 @@ class Handler implements URLHandler {
 
 * **Symptom:** the resulting array are all zeros `[0,0,0]`
 ![Image](lab3img/1.png)
-
 
 * **Explaination:** the reversed method has two bugs. The first one is that it creates a new empty array and assigns in indices from the blank arry to the input array. This is why the output array is all zeros. The new array is set by default to be all zeros. The part `array[i] = newArray[arr.length - i - 1]` is bug. Secondly, the method modifys and outputs the original array instead of outputs the new array. It should return `newArray` instead of returning `arr`.
 
