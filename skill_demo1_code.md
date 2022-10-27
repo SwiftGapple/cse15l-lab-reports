@@ -15,7 +15,7 @@ javac DocSearchServer.java Server.java\
 java DocSearchServer 4000
 
 5.
-http://localhost:4000/search?q=biomed\
+http://localhost:4000/search?q=biomed \
 http://localhost:4000/search?q=cse
 
 6.
@@ -26,7 +26,7 @@ git clone https://github.com/ucsd-cse15l-f22/skill-demo1
 javac DocSearchServer.java Server.java\
 java DocSearchServer 2333
 
-http://ieng6-2xx.ucsd.edu:2333/search?q=biomed\
+http://ieng6-2xx.ucsd.edu:2333/search?q=biomed \
 http://ieng6-2xx.ucsd.edu:2333/search?q=cse
 
 8.
@@ -36,7 +36,7 @@ Change line 47: f.getName().contains()
 javac DocSearchServer.java Server.java\
 java DocSearchServer 4000
 
-http://localhost:4000/search?q=rr74\
+http://localhost:4000/search?q=rr74 \
 http://localhost:4000/search?q=rr73
 
 10.
@@ -45,7 +45,7 @@ scp ./DocSearchServer.java cs15lfa22xx@ieng6.ucsd.edu:~/skill-demo1/
 javac DocSearchServer.java Server.java\
 java DocSearchServer 4000
 
-http://ieng6-2xx.ucsd.edu:2333/search?q=rr74\
+http://ieng6-2xx.ucsd.edu:2333/search?q=rr74 \
 http://ieng6-2xx.ucsd.edu:2333/search?q=rr73
 
 
