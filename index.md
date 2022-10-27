@@ -7,4 +7,4 @@
 
 [Lab1 Report 2](https://swiftgapple.github.io/cse15l-lab-reports/lab2.html)
 
-[Skill Demo Prep](https://swiftgapple.github.io/cse15l-lab-reports/skil_demo1_code.html)
+[Skill Demo Prep](https://swiftgapple.github.io/cse15l-lab-reports/skill_demo1_code.html)
