@@ -1,9 +1,11 @@
+#CSE15L Lab Report 3
+
 ## Less Command
 
 1. `less -N <filename>`
 * Display the line number for each line
 * Would be convenient when making reference to a specific line
-* Makes it easier when editing the file
+* Makes it easier when editing the file\
 ![Image](week5img/1.png)
 
  2. `less -X <filename>`
@@ -57,4 +59,8 @@
 * Can be used to to search specific section in the file
 ![Image](week5img/10.png)
 
-9. 
+9. `grep -i "pattern" <filename>`
+* This is a case insensitive search
+* Can be helpful when searching a keyword in an article
+* Without -i, the search will be case sensitive\
+![Image](week5img/11.png)
