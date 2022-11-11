@@ -11,4 +11,6 @@
 
 [Lab1 Report 3 Remake](https://swiftgapple.github.io/cse15l-lab-reports/lab3_remake.html)
 
+[Lab1 Report 4](https://swiftgapple.github.io/cse15l-lab-reports/lab4.html)
+
 [Skill Demo Prep](https://swiftgapple.github.io/cse15l-lab-reports/skill_demo1_code.html)
