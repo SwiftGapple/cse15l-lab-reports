@@ -20,7 +20,7 @@ Vim sequence (assume already entered vim):
 by manually replacing the names took sometimes. However, when editing remotely,
 I sometimes make typoes and there is no auto-detection on vim.
 
-Questions:\
+Questions:
 * Both methods have advantages and disadvantages. When editing locally, I an using
 VScode to edi and it have syntax correction imbedded in the editor. So it is easier
 for me to identify syntax error. When editing remotely using vim, though it's quicker
