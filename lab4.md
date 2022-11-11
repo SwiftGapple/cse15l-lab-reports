@@ -7,7 +7,7 @@ Vim sequence (assume already entered vim):
 \
 ![Image](week7img/1.png)
 * This is a one line command to change the parameter and all its uses
-* ` <11,25s>` is for limiting the section of lines, since i only want to modify the section in ` getFiles` 
+* ` <11,25s>` is for limiting the section of lines, since i only want to modify the section in `getFiles` 
 * It will only modify words between line 11 and 25
 * ` <start/base>` means that replace all instances of "start" by "base"
 * Result:\
