@@ -4,6 +4,7 @@
 
 Vim sequence (assume already entered vim):
 * ` /11,25s/start/base<Enter>`
+\
 ![Image](week7img/1.png)
 * This is a one line command to change the parameter and all its uses
 * ` <11,25s>` is for limiting the section of lines, since i only want to modify the section in ` getFiles` 
