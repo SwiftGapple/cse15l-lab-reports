@@ -80,14 +80,30 @@ $10: `git clone $1 $DIRECTORY > /dev/null 2> gitErr.txt`
 $11: `cp $JUNITTEST $DIRECTORY/`
 * copying the junit test file to the test directory
 * successful, no stdout/stderr
-* return code 0
+* return code is 0
 
-$18: `javac -cp $CPATH *.java 2> COMPILE_ERR.txt`
+$12: `cd $DIRECTORY`
+* change directory to /submission
+* succussful, not stdout/stderr
+* return code is 0
+
+$15-18:
+```
+if [[ ! -f ListExamples.java ]]; then
+    echo "Missing file: ListExamples.java. Please resubmit."
+    exit 2
+fi
+```
+* the condition is evaluated to false since the file ListExamples.java exists in the test directory
+* no stdout/stderr
+* return code is 0
+
+$21: `javac -cp $CPATH *.java 2> COMPILE_ERR.txt`
 * compiles all the file in the current directory
 * no stdout if succesful, return code 0
 * compiler error message will be directed via stderr to COMPILE_ERR.txt file, return code 1
 
-$19-24:
+$22-27:
 ```
 if [[ $? -ne 0 ]]; then
     echo -e "The program failed to compile!"
@@ -95,10 +111,46 @@ if [[ $? -ne 0 ]]; then
     cat COMPILE_ERR.txt
     exit 1
 fi
-
 ```
 * the condition will evaluate to false because the return code from previous javac command is 0, which means all the file have successfully compiled
 * the inner block won't execute since the condition evaluate to false
 
-$27: `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > TEST_SCORE.txt`
-* 
+$30: `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > TEST_SCORE.txt`
+* run the junit test on the student submission
+* successful, stdout is redirected to TEST_SCORE.txt
+* no error found
+* exit code 0
+
+$32: 
+```
+`errline=`grep "^[\.E]\+$" < TEST_SCORE.txt`
+```
+* grep the pattern "." and "E" in the output file from junit test
+* grep will take the entire line contaning the pattern
+* the command is stored in variable named errline
+* successful, no stdout/stderr
+* no return code, this is not executed
+
+$33:
+```
+counterr=`grep -o 'E' <<< $errline | wc -l`
+```
+* pipe the grep resulf of keyword "E" to wordcount -l
+* each grep result of "E" will make a new line
+* counting the number of lines gives the number of errors
+* successful, no stdout/stderr
+* return code 0
+
+$35-36
+```
+echo "$((8-counterr))/8 tests passed."
+echo "Junit Report:"
+```
+* printing out the score of the test
+* std out is the messages
+* return code 0
+
+$37: `cat TEST_SCORE.txt`
+* print out the messaged saved from the junit test
+* stdout is the message in the txt file
+* return code 0
