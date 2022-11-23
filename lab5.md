@@ -69,9 +69,21 @@ if [[ -d $DIRECTORY ]]; then
 fi
 ```
 * the condition will evaluate to true because the submission directory was created in the last submission and still exist in the current directory
-* rm -rf $DIRECTORY gives no stdout/err, return code is 0
+* successful, no stdout/stderr
+* return code is 0
+
+$10: `git clone $1 $DIRECTORY > /dev/null 2> gitErr.txt`
+* clone the student submission to the test directory
+* successful, stdout is that "cloning ( ) ..." and is directed to a null directory to hide it
+* return code is 0
+
+$11: `cp $JUNITTEST $DIRECTORY/`
+* copying the junit test file to the test directory
+* successful, no stdout/stderr
+* return code 0
 
 $18: `javac -cp $CPATH *.java 2> COMPILE_ERR.txt`
+* compiles all the file in the current directory
 * no stdout if succesful, return code 0
 * compiler error message will be directed via stderr to COMPILE_ERR.txt file, return code 1
 
@@ -86,7 +98,7 @@ fi
 
 ```
 * the condition will evaluate to false because the return code from previous javac command is 0, which means all the file have successfully compiled
-* the inner block won't execute
+* the inner block won't execute since the condition evaluate to false
 
 $27: `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > TEST_SCORE.txt`
 * 
