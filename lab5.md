@@ -129,7 +129,7 @@ $32:
 * grep will take the entire line contaning the pattern
 * the command is stored in variable named errline
 * successful, no stdout/stderr
-* no return code, this is not executed
+* no return code, the command has not been executed at this point
 
 $33:
 ```
