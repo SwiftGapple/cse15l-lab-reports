@@ -95,8 +95,7 @@ if [[ ! -f ListExamples.java ]]; then
 fi
 ```
 * the condition is evaluated to false since the file ListExamples.java exists in the test directory
-* no stdout/stderr
-* return code is 0
+* the block does not run
 
 $21: `javac -cp $CPATH *.java 2> COMPILE_ERR.txt`
 * compiles all the file in the current directory
@@ -113,7 +112,7 @@ if [[ $? -ne 0 ]]; then
 fi
 ```
 * the condition will evaluate to false because the return code from previous javac command is 0, which means all the file have successfully compiled
-* the inner block won't execute since the condition evaluate to false
+* the block does not run
 
 $30: `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > TEST_SCORE.txt`
 * run the junit test on the student submission
