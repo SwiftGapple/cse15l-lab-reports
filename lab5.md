@@ -75,6 +75,7 @@ fi
 $10: `git clone $1 $DIRECTORY > /dev/null 2> gitErr.txt`
 * clone the student submission to the test directory
 * successful, stdout is that "cloning ( ) ..." and is directed to a null directory to hide it
+* stderr is directed to gitErr.txt
 * return code is 0
 
 $11: `cp $JUNITTEST $DIRECTORY/`
@@ -117,7 +118,7 @@ fi
 $30: `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > TEST_SCORE.txt`
 * run the junit test on the student submission
 * successful, stdout is redirected to TEST_SCORE.txt
-* no error found
+* no error found so no stderr
 * exit code 0
 
 $32: 
